@@ -5,7 +5,7 @@ Node.js implementation for Tri-State Zipline Rental. This replaces the earlier W
 ## What Was Built
 
 - Server-rendered Node.js website with no database dependency.
-- Premium responsive design based on `Partners/premier_zipline.jpg`.
+- Premium responsive design using `public/assets/primier_zipline.jpeg` as the active hero image.
 - Homepage with cinematic hero video placeholder, proposal qualification form, trust strip, audience sections, package overview, safety, gallery, testimonials, process and FAQ.
 - Required core pages, audience pages and SEO landing pages.
 - Proposal form API that stores submissions in `data/proposals.json`.
@@ -38,9 +38,10 @@ No WordPress, Elementor, Fluent Forms, Webflow, Wix, Squarespace or React build 
 ## Reference Asset
 
 - Original reference: `../premier_zipline.jpg`
-- App copy: `public/assets/premier_zipline.jpg`
+- Active hero image: `public/assets/primier_zipline.jpeg`
+- Original reference copy: `public/assets/premier_zipline.jpg`
 
-Replace this reference image with approved production media before launch.
+Replace the active hero image with approved production media before launch.
 
 ## Lead Data
 

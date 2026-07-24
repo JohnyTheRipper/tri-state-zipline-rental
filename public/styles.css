@@ -702,7 +702,7 @@ textarea {
   place-items: center;
   background:
     linear-gradient(rgba(6, 27, 49, 0.5), rgba(6, 27, 49, 0.5)),
-    url("/assets/premier_zipline.jpg") center / cover;
+    url("/assets/primier_zipline.jpeg") center / cover;
   color: var(--white);
   box-shadow: var(--shadow);
 }
@@ -961,7 +961,7 @@ textarea {
 .final-cta {
   background:
     linear-gradient(rgba(6, 27, 49, 0.88), rgba(6, 27, 49, 0.94)),
-    url("/assets/premier_zipline.jpg") center / cover;
+    url("/assets/primier_zipline.jpeg") center / cover;
 }
 
 .final-cta-inner {

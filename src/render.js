@@ -76,10 +76,10 @@ function layout({ title, description, path = "/", content, schema = [], status =
     <meta property="og:type" content="website">
     <meta property="og:title" content="${escapeHtml(pageTitle)}">
     <meta property="og:description" content="${escapeHtml(description)}">
-    <meta property="og:image" content="/assets/premier_zipline.jpg">
+    <meta property="og:image" content="${escapeHtml(business.referenceImage)}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#061B31">
-    <link rel="preload" href="/assets/premier_zipline.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="${escapeHtml(business.referenceImage)}" as="image" fetchpriority="high">
     <link rel="stylesheet" href="/styles.css">
     ${schemaScripts}
   </head>

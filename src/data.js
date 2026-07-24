@@ -9,7 +9,7 @@ const business = {
   phoneHref: "+17323579471",
   email: "info@tristateziplinerental.com",
   region: "New Jersey, New York, Pennsylvania, and the Northeast",
-  referenceImage: "/assets/premier_zipline.jpg",
+  referenceImage: "/assets/primier_zipline.jpeg",
   proposalEmail: "info@tristateziplinerental.com"
 };
 
