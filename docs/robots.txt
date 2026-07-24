@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /tri-state-zipline-rental/
+Sitemap: https://johnytheripper.github.io/tri-state-zipline-rental/sitemap.xml
