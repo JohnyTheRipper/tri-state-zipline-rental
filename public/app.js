@@ -1,4 +1,5 @@
 (function () {
+  const STATIC_PROPOSAL_EMAIL = "info@tristateziplinerental.com";
   const header = document.querySelector("[data-header]");
   const nav = document.querySelector("[data-nav]");
   const toggle = document.querySelector("[data-menu-toggle]");
@@ -112,6 +113,12 @@
       const status = form.querySelector(".form-status");
       if (status) status.textContent = "Submitting proposal request...";
 
+      if (isStaticPageHost()) {
+        if (status) status.textContent = "Opening your email client with the proposal request details.";
+        window.location.href = buildProposalMailto(form);
+        return;
+      }
+
       try {
         const response = await fetch(form.action, {
           method: "POST",
@@ -131,4 +138,56 @@
       }
     });
   });
+
+  function isStaticPageHost() {
+    return window.location.hostname.endsWith("github.io");
+  }
+
+  function buildProposalMailto(form) {
+    const data = new FormData(form);
+    const organization = String(data.get("organizationName") || "Event Proposal").trim();
+    const fields = [
+      "organizationName",
+      "contactName",
+      "email",
+      "phone",
+      "eventDate",
+      "eventType",
+      "attendance",
+      "budgetRange",
+      "eventLocation",
+      "city",
+      "state",
+      "availableLength",
+      "availableWidth",
+      "surfaceType",
+      "indoorOutdoor",
+      "truckAccess",
+      "overheadObstructions",
+      "desiredPackage",
+      "brandingInterest",
+      "eventGoals",
+      "additionalNotes",
+      "landingPage",
+      "utmSource",
+      "utmMedium",
+      "utmCampaign",
+    ];
+    const body = fields
+      .map((name) => [fieldLabel(name), String(data.get(name) || "").trim()])
+      .filter(([, value]) => value)
+      .map(([label, value]) => `${label}: ${value}`)
+      .join("\n");
+    const params = new URLSearchParams({
+      subject: `Tri-State Zipline proposal request - ${organization}`,
+      body: `${body}\n\nSubmitted from: ${window.location.href}`,
+    });
+    return `mailto:${STATIC_PROPOSAL_EMAIL}?${params.toString()}`;
+  }
+
+  function fieldLabel(name) {
+    return String(name)
+      .replace(/([A-Z])/g, " $1")
+      .replace(/^./, (letter) => letter.toUpperCase());
+  }
 })();
